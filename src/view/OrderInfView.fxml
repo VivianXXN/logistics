@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="970.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.OIVcontroller">
+   <children>
+      <TableView fx:id="tv_order_inf" layoutX="142.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="tc_cargo_name" prefWidth="438.0" text="名称" />
+          <TableColumn fx:id="tc_cargo_number" prefWidth="131.0" text="数量" />
+        </columns>
+      </TableView>
+      <Label layoutX="666.0" layoutY="70.0" text="下单时间：" />
+      <Label fx:id="lb_order_time" layoutX="754.0" layoutY="70.0" text="Label" />
+      <Label layoutX="666.0" layoutY="150.0" text="管理员姓名：" />
+      <Label fx:id="lb_manager_name" layoutX="754.0" layoutY="150.0" text="Label" />
+      <Label fx:id="lb_courier_name" layoutX="755.0" layoutY="230.0" text="Label" />
+      <Label layoutX="667.0" layoutY="230.0" text="配送员姓名：" />
+      <Label layoutX="667.0" layoutY="310.0" text="配送员电话：" />
+      <Label fx:id="lb_courier_tel" layoutX="755.0" layoutY="310.0" text="Label" />
+      <Label fx:id="lb_order_place1" layoutX="755.0" layoutY="390.0" text="Label" />
+      <Label layoutX="667.0" layoutY="390.0" text="出发地：" />
+      <Label fx:id="lb_order_place2" layoutX="755.0" layoutY="470.0" text="Label" />
+      <Label layoutX="667.0" layoutY="470.0" text="目的地：" />
+      <Label fx:id="lb_order_state" layoutX="755.0" layoutY="550.0" text="Label" />
+      <Label layoutX="667.0" layoutY="550.0" text="配送状态：" />
+   </children>
+</AnchorPane>

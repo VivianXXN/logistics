@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="970.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Mcontroller">
+  <tabs>
+    <Tab text="货物管理">
+         <content>
+            <AnchorPane prefHeight="340.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="tv_cargo" prefHeight="371.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="cargo_name" prefWidth="591.0" text="货物名称" />
+                      <TableColumn fx:id="cargo_number" minWidth="0.0" prefWidth="88.0" text="货物剩余数量" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="tf_cargoname" layoutX="744.0" layoutY="64.0" onAction="#selectCargoByName" />
+                  <Label layoutX="766.0" layoutY="24.0" prefHeight="31.0" prefWidth="132.0" text="输入货物名称以查询" />
+                  <Button fx:id="bt_select_cargo" layoutX="804.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#selectCargoByName" text="确认" />
+                  <Button fx:id="bt_add_cargo" layoutX="770.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#addCargo" prefWidth="115.0" text="增加货物信息" />
+                  <Button fx:id="bt_delete_cargo" layoutX="770.0" layoutY="480.0" mnemonicParsing="false" onAction="#deleteCargo" prefWidth="115.0" text="删除该条货物信息" />
+                  <Button fx:id="bt_change_cargo" layoutX="770.0" layoutY="420.0" mnemonicParsing="false" onAction="#changeCargo" onMouseClicked="#changeCargo" prefWidth="115.0" text="修改货物信息" />
+                  <Label fx:id="managerlb" layoutX="824.0" layoutY="540.0" prefHeight="15.0" prefWidth="90.0" text="Label" />
+                  <Label layoutX="766.0" layoutY="540.0" text="account：" />
+                  <Button fx:id="bt_add_order" layoutX="788.0" layoutY="265.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="23.0" prefWidth="74.0" text="确定加入" />
+                  <Label layoutX="758.0" layoutY="181.0" prefHeight="31.0" prefWidth="132.0" text="输入数量以加入已选货物" />
+                  <TextField fx:id="tf_cargo_num" layoutX="744.0" layoutY="224.0" onAction="#selectCargoByName" />
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+      <Tab text="已选货物">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tv_OrderCargo" layoutX="40.0" layoutY="61.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="488.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="OrderCargo_name" prefWidth="298.0" text="货物名称" />
+                        <TableColumn fx:id="OrderCargo_number" prefWidth="183.0" text="数量" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="tv_courier_name" layoutX="582.0" prefHeight="621.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="Courier_name" prefWidth="199.0" text="配送员姓名" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="OrderCargo_affirm" layoutX="758.0" layoutY="477.0" mnemonicParsing="false" onAction="#affirmOrder" prefWidth="115.0" text="确认下单" />
+                  <Button fx:id="OrderCargo_delete" layoutX="758.0" layoutY="535.0" mnemonicParsing="false" onAction="#deleteOrderInf" prefWidth="115.0" text="删除该条目" />
+                  <Label layoutX="799.0" layoutY="27.0" text="发货地址" />
+                  <TextArea fx:id="place1" layoutX="723.0" layoutY="71.0" prefHeight="85.0" prefWidth="200.0" />
+                  <Label layoutX="799.0" layoutY="201.0" text="目的地址" />
+                  <TextArea fx:id="place2" layoutX="723.0" layoutY="275.0" prefHeight="85.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="配送员管理">
+         <content>
+            <AnchorPane prefHeight="340.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="tv_courier" prefHeight="371.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="courier_id" prefWidth="167.0" text="工号" />
+                        <TableColumn fx:id="courier_name" minWidth="0.0" prefWidth="150.0" text="姓名" />
+                        <TableColumn fx:id="courier_number" prefWidth="364.0" text="电话" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="tf_couriername" layoutX="737.0" layoutY="130.0" onAction="#selectUserByName" />
+                  <Label layoutX="758.0" layoutY="80.0" prefHeight="31.0" prefWidth="132.0" text="输入配送员姓名以查询" />
+                  <Button fx:id="bt_select_courier" layoutX="800.0" layoutY="180.0" mnemonicParsing="false" onMouseClicked="#selectUserByName" text="确认" />
+                  <Button fx:id="bt_add_courier" layoutX="758.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#addUser" prefWidth="130.0" text="增加配送员信息" />
+                  <Button fx:id="bt_delete_courier" layoutX="760.0" layoutY="422.0" mnemonicParsing="false" onAction="#deleteUser" prefWidth="130.0" text="删除该条配送员信息" />
+                  <Button fx:id="bt_change_courier" layoutX="760.0" layoutY="357.0" mnemonicParsing="false" onAction="#changeUser" onMouseClicked="#changeUser" prefWidth="130.0" text="修改配送员信息" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+    <Tab text="订单详情">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tv_order_Inf" layoutX="40.0" layoutY="61.0" prefHeight="621.0" prefWidth="819.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tc_order_id" text="订单编号" />
+                      <TableColumn fx:id="tc_order_time" prefWidth="111.0" text="下单时间" />
+                        <TableColumn fx:id="tc_order_umname" prefWidth="93.0" text="管理员姓名" />
+                        <TableColumn fx:id="tc_order_ucname" prefWidth="67.0" text="配送员姓名" />
+                        <TableColumn fx:id="tc_order_place1" prefWidth="145.0" text="出发地" />
+                        <TableColumn fx:id="tc_order_place2" prefWidth="187.0" text="目的地" />
+                        <TableColumn fx:id="tc_order_state" prefWidth="98.0" text="派送状态" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="bt_order_view" layoutX="823.0" layoutY="258.0" mnemonicParsing="false" onAction="#viewOrderInf" prefHeight="64.0" prefWidth="110.0" text="查看该订单详情" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

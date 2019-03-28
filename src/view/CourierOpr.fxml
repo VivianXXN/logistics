@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ccontroller">
+   <children>
+      <TitledPane animated="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="252.0" text="的订单" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <TableView fx:id="tv_courier_order" prefHeight="300.0" prefWidth="250.0">
+               <columns>
+                  <TableColumn fx:id="courier_order_time" prefWidth="106.0" text="下单时间" />
+                  <TableColumn fx:id="courier_order_to" prefWidth="87.0" text="目的地址" />
+                  <TableColumn fx:id="courier_order_state" prefWidth="57.0" text="配送状态" />
+               </columns>
+            </TableView>
+         </content>
+         <graphic>
+            <Label fx:id="courierlb" text="Label" />
+         </graphic>
+      </TitledPane>
+      <Button fx:id="bt_affirm" layoutX="53.0" layoutY="343.0" mnemonicParsing="false" onAction="#confirm" text="确认送达" />
+      <Button fx:id="bt__fail" layoutX="148.0" layoutY="343.0" mnemonicParsing="false" onAction="#unConfirm" text="配送异常" />
+   </children>
+</AnchorPane>
